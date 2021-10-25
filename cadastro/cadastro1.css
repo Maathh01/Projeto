@@ -1,0 +1,126 @@
+:root{
+    --input-linear: linear-gradient(120deg, #a186f1, #380B61);
+    --input-error: red;
+    --button-linerar: linear-gradient(120deg, #a186f1, #380B61, #a186f1);
+    --button-disabled: #ACACAC;
+    --button-success: rgb(18, 151, 107);
+    --white: #FFFFFF;
+    --black: #303030;
+    --gray: #929292;
+    --light-gray: #CFCFCF;
+    --border-height: 1px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.cadastro{
+    height: 100vh;
+    background: var(--input-linear);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cadastro_container{
+    min-height: 400px;
+    width: 300px;
+    background-color: var(--white);
+    box-sizing: border-box;
+    padding: 32px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cadastro_title{
+    margin-bottom: 32px;
+    color: var(--black);
+}
+
+.cadastro_form{
+    width: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cadastro_input{
+    height: 48px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 8px;
+    border: unset;
+    outline: none;
+}
+
+.cadastro_input-border{
+    height: var(--border-height);
+    width: 100%;
+    margin-bottom: 16px;
+    background-color: var(--light-gray);
+    transition: .3s ease-in-out;
+}
+
+.cadastro_input-border::after{
+    content: " ";
+    display: block;
+    height: var(--border-height);
+    width: 0;
+    margin-bottom: 16px;
+    background: var(--input-linear);
+    transition: .3s ease-in-out;
+}
+
+.cadastro_input:focus + .cadastro_input-border::after{
+    width: 100%;
+}
+
+.cadastro_input-border.error {
+    background: var(--input-linear);
+}
+
+.cadastro_submit{
+    height: 48px;
+    width: 100%;
+    outline: none;
+    background: var(--button-linerar);
+    background-size: 200%;
+    margin-bottom: 32px;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: bold;
+    border: unset;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+.cadastro_submit:disabled {
+    background: var(--button-disabled);
+    cursor: not-allowed;
+}
+
+.cadastro_submit:hover{
+    background-position: right;
+}
+
+.cadastro_submit.error {
+    background: var(--input-error);
+}
+
+.cadastro_submit.success {
+    background: var(--input-success);
+}
+
+
+.cadastro_reset{
+    font-size: 12px;
+    color: var(--gray);
+    text-decoration: none;
+}
